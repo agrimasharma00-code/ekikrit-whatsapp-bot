@@ -1,0 +1,570 @@
+[
+  {
+    "name": "PM Awas Yojana (Gramin)",
+    "description": "Housing scheme for rural poor to build pucca houses",
+    "benefit": "Rs 1.2 lakh (plains) or Rs 1.3 lakh (hilly areas) for house construction",
+    "income_limit": 200000,
+    "min_age": 18,
+    "max_age": 80,
+    "occupations": [
+      "any"
+    ],
+    "castes": [
+      "any"
+    ],
+    "states": [
+      "any"
+    ],
+    "documents": "Aadhaar, BPL card, bank account, land ownership proof",
+    "apply_link": "https://pmayg.nic.in",
+    "last_date": null,
+    "reminder_days_before": 7
+  },
+  {
+    "name": "PM Jan Dhan Yojana",
+    "description": "Zero balance bank account with insurance and overdraft",
+    "benefit": "Free bank account, Rs 2 lakh accident insurance, Rs 30,000 life cover",
+    "income_limit": 300000,
+    "min_age": 10,
+    "max_age": 65,
+    "occupations": [
+      "any"
+    ],
+    "castes": [
+      "any"
+    ],
+    "states": [
+      "any"
+    ],
+    "documents": "Aadhaar, PAN or any ID proof",
+    "apply_link": "https://pmjdy.gov.in",
+    "last_date": null,
+    "reminder_days_before": 7
+  },
+  {
+    "name": "PM Kisan Samman Nidhi",
+    "description": "Direct income support for farmers",
+    "benefit": "Rs 6,000 per year in 3 installments of Rs 2,000",
+    "income_limit": 200000,
+    "min_age": 18,
+    "max_age": 80,
+    "occupations": [
+      "farmer",
+      "agriculture",
+      "farming",
+      "kisaan"
+    ],
+    "castes": [
+      "any"
+    ],
+    "states": [
+      "any"
+    ],
+    "documents": "Aadhaar, land records, bank account",
+    "apply_link": "https://pmkisan.gov.in",
+    "last_date": "2025-12-31",
+    "reminder_days_before": 30
+  },
+  {
+    "name": "Pradhan Mantri Ujjwala Yojana",
+    "description": "Free LPG connection for BPL women",
+    "benefit": "Free LPG gas connection with first cylinder and stove",
+    "income_limit": 150000,
+    "min_age": 18,
+    "max_age": 60,
+    "occupations": [
+      "any"
+    ],
+    "castes": [
+      "any"
+    ],
+    "states": [
+      "any"
+    ],
+    "documents": "BPL card, Aadhaar, ration card",
+    "apply_link": "https://pmuy.gov.in",
+    "last_date": null,
+    "reminder_days_before": 7
+  },
+  {
+    "name": "Ayushman Bharat PM-JAY",
+    "description": "Health insurance for poor and vulnerable families",
+    "benefit": "Rs 5 lakh per year health coverage for secondary and tertiary care",
+    "income_limit": 150000,
+    "min_age": 0,
+    "max_age": 100,
+    "occupations": [
+      "any"
+    ],
+    "castes": [
+      "any"
+    ],
+    "states": [
+      "any"
+    ],
+    "documents": "Aadhaar, ration card, SECC data enrolment",
+    "apply_link": "https://pmjay.gov.in",
+    "last_date": null,
+    "reminder_days_before": 7
+  },
+  {
+    "name": "PM Matru Vandana Yojana",
+    "description": "Maternity benefit for pregnant and lactating mothers",
+    "benefit": "Rs 5,000 in 3 installments for first live birth",
+    "income_limit": 200000,
+    "min_age": 19,
+    "max_age": 45,
+    "occupations": [
+      "any"
+    ],
+    "castes": [
+      "any"
+    ],
+    "states": [
+      "any"
+    ],
+    "documents": "MCP card, Aadhaar, bank account, marriage certificate",
+    "apply_link": "https://wcd.nic.in/schemes/pradhan-mantri-matru-vandana-yojana",
+    "last_date": null,
+    "reminder_days_before": 7
+  },
+  {
+    "name": "Sukanya Samriddhi Yojana",
+    "description": "Savings scheme for girl child education and marriage",
+    "benefit": "8.2% interest rate, tax benefits under 80C, maturity at age 21",
+    "income_limit": 500000,
+    "min_age": 18,
+    "max_age": 60,
+    "occupations": [
+      "any"
+    ],
+    "castes": [
+      "any"
+    ],
+    "states": [
+      "any"
+    ],
+    "documents": "Girl child birth certificate, parent Aadhaar, address proof",
+    "apply_link": "https://www.india.gov.in/sukanya-samriddhi-account",
+    "last_date": null,
+    "reminder_days_before": 7
+  },
+  {
+    "name": "PM Fasal Bima Yojana",
+    "description": "Crop insurance for farmers against natural calamities",
+    "benefit": "Insurance coverage for crops lost to drought, flood, cyclone",
+    "income_limit": 300000,
+    "min_age": 18,
+    "max_age": 70,
+    "occupations": [
+      "farmer",
+      "agriculture",
+      "farming",
+      "kisaan"
+    ],
+    "castes": [
+      "any"
+    ],
+    "states": [
+      "any"
+    ],
+    "documents": "Land records, bank account, sowing certificate",
+    "apply_link": "https://pmfby.gov.in",
+    "last_date": "2025-03-31",
+    "reminder_days_before": 14
+  },
+  {
+    "name": "MGNREGS (Mahatma Gandhi NREGS)",
+    "description": "100 days guaranteed wage employment in rural areas",
+    "benefit": "100 days of employment per year at minimum wage (Rs 200-350/day by state)",
+    "income_limit": 200000,
+    "min_age": 18,
+    "max_age": 80,
+    "occupations": [
+      "daily wage",
+      "construction worker",
+      "labour",
+      "labourer",
+      "any"
+    ],
+    "castes": [
+      "any"
+    ],
+    "states": [
+      "any"
+    ],
+    "documents": "Job card, Aadhaar, bank account",
+    "apply_link": "https://nrega.nic.in",
+    "last_date": null,
+    "reminder_days_before": 7
+  },
+  {
+    "name": "National Social Assistance Programme (NSAP)",
+    "description": "Pension for elderly, widows, and disabled persons",
+    "benefit": "Rs 200-500/month pension (varies by state top-up)",
+    "income_limit": 100000,
+    "min_age": 60,
+    "max_age": 100,
+    "occupations": [
+      "any"
+    ],
+    "castes": [
+      "any"
+    ],
+    "states": [
+      "any"
+    ],
+    "documents": "Age proof, BPL certificate, Aadhaar, bank account",
+    "apply_link": "https://nsap.nic.in",
+    "last_date": null,
+    "reminder_days_before": 7
+  },
+  {
+    "name": "PM Shram Yogi Maandhan Yojana",
+    "description": "Pension scheme for unorganised sector workers",
+    "benefit": "Rs 3,000/month pension after age 60",
+    "income_limit": 180000,
+    "min_age": 18,
+    "max_age": 40,
+    "occupations": [
+      "construction worker",
+      "daily wage",
+      "vendor",
+      "street vendor",
+      "labour",
+      "domestic worker"
+    ],
+    "castes": [
+      "any"
+    ],
+    "states": [
+      "any"
+    ],
+    "documents": "Aadhaar, mobile number, savings bank account",
+    "apply_link": "https://maandhan.in",
+    "last_date": null,
+    "reminder_days_before": 7
+  },
+  {
+    "name": "Atal Pension Yojana",
+    "description": "Pension scheme for workers in unorganised sector",
+    "benefit": "Guaranteed pension of Rs 1,000-5,000/month after age 60",
+    "income_limit": 300000,
+    "min_age": 18,
+    "max_age": 40,
+    "occupations": [
+      "any"
+    ],
+    "castes": [
+      "any"
+    ],
+    "states": [
+      "any"
+    ],
+    "documents": "Savings bank account, Aadhaar, mobile number",
+    "apply_link": "https://www.npscra.nsdl.co.in/scheme-details.php",
+    "last_date": null,
+    "reminder_days_before": 7
+  },
+  {
+    "name": "PM SVANidhi (Street Vendor Loan)",
+    "description": "Collateral-free working capital loan for street vendors",
+    "benefit": "Rs 10,000 loan initially, up to Rs 50,000 on repayment",
+    "income_limit": 200000,
+    "min_age": 18,
+    "max_age": 65,
+    "occupations": [
+      "vendor",
+      "street vendor",
+      "hawker",
+      "seller"
+    ],
+    "castes": [
+      "any"
+    ],
+    "states": [
+      "any"
+    ],
+    "documents": "Vending certificate or letter from ULB, Aadhaar, bank account",
+    "apply_link": "https://pmsvanidhi.mohua.gov.in",
+    "last_date": null,
+    "reminder_days_before": 7
+  },
+  {
+    "name": "Mudra Yojana (Shishu)",
+    "description": "Micro loan for small business and self-employment",
+    "benefit": "Loan up to Rs 50,000 without collateral for small business",
+    "income_limit": 500000,
+    "min_age": 18,
+    "max_age": 65,
+    "occupations": [
+      "vendor",
+      "small business",
+      "self-employed",
+      "trader",
+      "artisan"
+    ],
+    "castes": [
+      "any"
+    ],
+    "states": [
+      "any"
+    ],
+    "documents": "Aadhaar, PAN, business plan, address proof",
+    "apply_link": "https://www.mudra.org.in",
+    "last_date": null,
+    "reminder_days_before": 7
+  },
+  {
+    "name": "National Scholarship Portal (Pre-Matric)",
+    "description": "Scholarship for SC/ST/OBC students in classes 1-10",
+    "benefit": "Rs 1,000-2,500 per year scholarship",
+    "income_limit": 250000,
+    "min_age": 5,
+    "max_age": 20,
+    "occupations": [
+      "student"
+    ],
+    "castes": [
+      "sc",
+      "st",
+      "obc"
+    ],
+    "states": [
+      "any"
+    ],
+    "documents": "School enrollment proof, caste certificate, income certificate, bank account",
+    "apply_link": "https://scholarships.gov.in",
+    "last_date": null,
+    "reminder_days_before": 7
+  },
+  {
+    "name": "National Scholarship Portal (Post-Matric)",
+    "description": "Scholarship for SC/ST/OBC students after class 10",
+    "benefit": "Rs 5,000-12,000 per year including maintenance allowance",
+    "income_limit": 250000,
+    "min_age": 15,
+    "max_age": 30,
+    "occupations": [
+      "student"
+    ],
+    "castes": [
+      "sc",
+      "st",
+      "obc"
+    ],
+    "states": [
+      "any"
+    ],
+    "documents": "Mark sheet class 10, caste certificate, income certificate, bank account",
+    "apply_link": "https://scholarships.gov.in",
+    "last_date": null,
+    "reminder_days_before": 7
+  },
+  {
+    "name": "Beti Bachao Beti Padhao",
+    "description": "Scheme for welfare and education of girl child",
+    "benefit": "Awareness, education support, cash transfers in select states",
+    "income_limit": 300000,
+    "min_age": 18,
+    "max_age": 50,
+    "occupations": [
+      "any"
+    ],
+    "castes": [
+      "any"
+    ],
+    "states": [
+      "any"
+    ],
+    "documents": "Girl child documents, parent Aadhaar",
+    "apply_link": "https://wcd.nic.in/bbbp-schemes",
+    "last_date": null,
+    "reminder_days_before": 7
+  },
+  {
+    "name": "PM Kaushal Vikas Yojana (PMKVY)",
+    "description": "Free skill training and certification for youth",
+    "benefit": "Free skill training + Rs 8,000 reward on certification + job placement",
+    "income_limit": 300000,
+    "min_age": 15,
+    "max_age": 45,
+    "occupations": [
+      "any"
+    ],
+    "castes": [
+      "any"
+    ],
+    "states": [
+      "any"
+    ],
+    "documents": "Aadhaar, educational certificates, bank account",
+    "apply_link": "https://www.pmkvyofficial.org",
+    "last_date": "2025-09-30",
+    "reminder_days_before": 10
+  },
+  {
+    "name": "Pradhan Mantri Garib Kalyan Anna Yojana",
+    "description": "Free food grain for poor families",
+    "benefit": "5 kg free rice/wheat per person per month",
+    "income_limit": 150000,
+    "min_age": 0,
+    "max_age": 100,
+    "occupations": [
+      "any"
+    ],
+    "castes": [
+      "any"
+    ],
+    "states": [
+      "any"
+    ],
+    "documents": "Ration card, Aadhaar",
+    "apply_link": "https://dfpd.gov.in",
+    "last_date": null,
+    "reminder_days_before": 7
+  },
+  {
+    "name": "Janani Suraksha Yojana",
+    "description": "Cash incentive for institutional delivery for BPL pregnant women",
+    "benefit": "Rs 1,400 (rural) or Rs 1,000 (urban) on hospital delivery",
+    "income_limit": 150000,
+    "min_age": 19,
+    "max_age": 45,
+    "occupations": [
+      "any"
+    ],
+    "castes": [
+      "any"
+    ],
+    "states": [
+      "any"
+    ],
+    "documents": "BPL card, ANC registration, Aadhaar, bank account",
+    "apply_link": "https://nhm.gov.in/index1.php?lang=1&level=3&sublinkid=841&lid=309",
+    "last_date": null,
+    "reminder_days_before": 7
+  },
+  {
+    "name": "Deen Dayal Upadhyaya Grameen Kaushalya Yojana",
+    "description": "Placement-linked skill training for rural youth",
+    "benefit": "Free training + guaranteed job placement with minimum Rs 6,000/month salary",
+    "income_limit": 200000,
+    "min_age": 15,
+    "max_age": 35,
+    "occupations": [
+      "any"
+    ],
+    "castes": [
+      "any"
+    ],
+    "states": [
+      "any"
+    ],
+    "documents": "Aadhaar, educational proof, address proof",
+    "apply_link": "https://ddugky.gov.in",
+    "last_date": null,
+    "reminder_days_before": 7
+  },
+  {
+    "name": "Stand-Up India Scheme",
+    "description": "Bank loans for SC/ST and women entrepreneurs",
+    "benefit": "Rs 10 lakh to Rs 1 crore loan for greenfield enterprise",
+    "income_limit": 1000000,
+    "min_age": 18,
+    "max_age": 60,
+    "occupations": [
+      "self-employed",
+      "trader",
+      "small business",
+      "entrepreneur"
+    ],
+    "castes": [
+      "sc",
+      "st"
+    ],
+    "states": [
+      "any"
+    ],
+    "documents": "Aadhaar, PAN, caste certificate, business plan, bank account",
+    "apply_link": "https://www.standupmitra.in",
+    "last_date": "2025-12-31",
+    "reminder_days_before": 14
+  },
+  {
+    "name": "E-Shram Card Scheme",
+    "description": "Universal account for unorganised workers with benefits",
+    "benefit": "Rs 2 lakh accident insurance, priority access to social security schemes",
+    "income_limit": 200000,
+    "min_age": 16,
+    "max_age": 59,
+    "occupations": [
+      "construction worker",
+      "daily wage",
+      "domestic worker",
+      "labour",
+      "vendor",
+      "farmer",
+      "driver"
+    ],
+    "castes": [
+      "any"
+    ],
+    "states": [
+      "any"
+    ],
+    "documents": "Aadhaar linked to mobile, bank account",
+    "apply_link": "https://eshram.gov.in",
+    "last_date": null,
+    "reminder_days_before": 7
+  },
+  {
+    "name": "PM Vishwakarma Yojana",
+    "description": "Support for traditional artisans and craftsmen",
+    "benefit": "Skill training + Rs 15,000 toolkit grant + Rs 3 lakh collateral-free loan",
+    "income_limit": 300000,
+    "min_age": 18,
+    "max_age": 70,
+    "occupations": [
+      "carpenter",
+      "blacksmith",
+      "weaver",
+      "potter",
+      "tailor",
+      "artisan",
+      "craftsman",
+      "cobbler"
+    ],
+    "castes": [
+      "any"
+    ],
+    "states": [
+      "any"
+    ],
+    "documents": "Aadhaar, PM Vishwakarma registration, bank account",
+    "apply_link": "https://pmvishwakarma.gov.in",
+    "last_date": null,
+    "reminder_days_before": 7
+  },
+  {
+    "name": "Antyodaya Anna Yojana",
+    "description": "Subsidised food for poorest of the poor families",
+    "benefit": "35 kg food grain per month at Rs 2/kg wheat and Rs 3/kg rice",
+    "income_limit": 100000,
+    "min_age": 0,
+    "max_age": 100,
+    "occupations": [
+      "any"
+    ],
+    "castes": [
+      "any"
+    ],
+    "states": [
+      "any"
+    ],
+    "documents": "Antyodaya ration card, Aadhaar",
+    "apply_link": "https://dfpd.gov.in/aay.htm",
+    "last_date": null,
+    "reminder_days_before": 7
+  }
+]
