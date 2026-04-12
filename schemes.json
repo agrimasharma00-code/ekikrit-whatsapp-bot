@@ -1,0 +1,122 @@
+[
+  {
+    "name": "PM Awas Yojana (Urban)",
+    "income_limit": 300000,
+    "benefit": "Ghar banane ke liye Rs 2.5 lakh ki madad",
+    "documents": "Aadhaar, income certificate, bank account",
+    "occupations": ["any"],
+    "castes": ["any"],
+    "min_age": 18,
+    "max_age": 99
+  },
+  {
+    "name": "Ayushman Bharat PMJAY",
+    "income_limit": 500000,
+    "benefit": "5 lakh rupaye tak ka free ilaaj",
+    "documents": "Aadhaar, ration card, income certificate",
+    "occupations": ["any"],
+    "castes": ["any"],
+    "min_age": 0,
+    "max_age": 99
+  },
+  {
+    "name": "e-Shram Card",
+    "income_limit": 500000,
+    "benefit": "2 lakh ka accident insurance + welfare schemes",
+    "documents": "Aadhaar, mobile number, bank account",
+    "occupations": ["construction", "daily wage", "migrant", "labour", "worker", "mazdoor", "any"],
+    "castes": ["any"],
+    "min_age": 16,
+    "max_age": 59
+  },
+  {
+    "name": "PM Ujjwala Yojana",
+    "income_limit": 200000,
+    "benefit": "Free LPG connection + pehli refill free",
+    "documents": "Aadhaar, BPL ration card, bank account",
+    "occupations": ["any"],
+    "castes": ["any"],
+    "min_age": 18,
+    "max_age": 99
+  },
+  {
+    "name": "PM Mudra Yojana",
+    "income_limit": 500000,
+    "benefit": "50,000 se 10 lakh tak ka business loan bina guarantee ke",
+    "documents": "Aadhaar, PAN, bank account, business proof",
+    "occupations": ["business", "self employed", "vendor", "shop", "any"],
+    "castes": ["any"],
+    "min_age": 18,
+    "max_age": 65
+  },
+  {
+    "name": "PM Jeevan Jyoti Bima Yojana",
+    "income_limit": 500000,
+    "benefit": "2 lakh ka life insurance sirf Rs 436/saal mein",
+    "documents": "Aadhaar, bank account",
+    "occupations": ["any"],
+    "castes": ["any"],
+    "min_age": 18,
+    "max_age": 50
+  },
+  {
+    "name": "PM Suraksha Bima Yojana",
+    "income_limit": 500000,
+    "benefit": "2 lakh ka accident insurance sirf Rs 20/saal mein",
+    "documents": "Aadhaar, bank account",
+    "occupations": ["any"],
+    "castes": ["any"],
+    "min_age": 18,
+    "max_age": 70
+  },
+  {
+    "name": "Atal Pension Yojana",
+    "income_limit": 500000,
+    "benefit": "60 saal ke baad Rs 1000-5000 monthly pension guaranteed",
+    "documents": "Aadhaar, bank account, mobile number",
+    "occupations": ["any"],
+    "castes": ["any"],
+    "min_age": 18,
+    "max_age": 40
+  },
+  {
+    "name": "OBC Post-Matric Scholarship",
+    "income_limit": 100000,
+    "benefit": "Tuition fees + monthly stipend for higher education",
+    "documents": "Aadhaar, caste certificate, income certificate, marksheet",
+    "occupations": ["student"],
+    "castes": ["obc", "OBC"],
+    "min_age": 15,
+    "max_age": 30
+  },
+  {
+    "name": "SC/ST Scholarship",
+    "income_limit": 250000,
+    "benefit": "Monthly stipend + books aur uniform ke liye grant",
+    "documents": "Aadhaar, caste certificate, income certificate, school proof",
+    "occupations": ["student"],
+    "castes": ["sc", "st", "SC", "ST"],
+    "min_age": 10,
+    "max_age": 25
+  },
+  {
+    "name": "MGNREGA (Job Card)",
+    "income_limit": 500000,
+    "benefit": "Saal mein 100 din ka guaranteed rozgar minimum wage par",
+    "documents": "Aadhaar, gram panchayat job card, bank account",
+    "occupations": ["any"],
+    "castes": ["any"],
+    "min_age": 18,
+    "max_age": 99
+  },
+  {
+    "name": "PM SVANidhi (Rehri Wala Loan)",
+    "income_limit": 500000,
+    "benefit": "Rs 10,000 ka loan bina guarantee ke street vendors ke liye",
+    "documents": "Aadhaar, vending certificate ya recommendation letter",
+    "occupations": ["vendor", "rehri", "street vendor", "hawker", "thela"],
+    "castes": ["any"],
+    "min_age": 18,
+    "max_age": 99
+  }
+]

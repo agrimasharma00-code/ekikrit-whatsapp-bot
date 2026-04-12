@@ -1,0 +1,55 @@
+# Environment variables
+.env
+.env.local
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+dist/
+build/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Audio files (generated)
+*.mp3
+reply.mp3
+
+# ngrok
+ngrok-v3-stable-windows-amd64/
+*.ngrok
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db

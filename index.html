@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ekikrit — Apna Hak, Apni Bhasha</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-dark: #0d5c3a;
+    --green-mid: #1a7a4e;
+    --green-light: #25a96b;
+    --green-pale: #e8f7ef;
+    --gold: #f0b429;
+    --gold-light: #fef3c7;
+    --white: #fafaf8;
+    --text: #1a1a1a;
+    --text-muted: #5a6272;
+    --border: #e2e8e4;
+  }
+ 
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+  html { scroll-behavior: smooth; }
+ 
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+ 
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(250,250,248,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+ 
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 1.5rem;
+    color: var(--green-dark);
+    letter-spacing: -0.5px;
+  }
+ 
+  .nav-logo span { color: var(--green-light); }
+ 
+  .nav-links { display: flex; gap: 2rem; align-items: center; }
+ 
+  .nav-links a {
+    text-decoration: none; color: var(--text-muted);
+    font-size: 0.9rem; font-weight: 500;
+    transition: color 0.2s;
+  }
+ 
+  .nav-links a:hover { color: var(--green-dark); }
+ 
+  .nav-cta {
+    background: var(--green-dark); color: white !important;
+    padding: 0.6rem 1.4rem; border-radius: 50px;
+    font-weight: 500 !important;
+    transition: background 0.2s !important;
+  }
+ 
+  .nav-cta:hover { background: var(--green-mid) !important; }
+ 
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 8rem 4rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+ 
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 70% 50%, rgba(37,169,107,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(240,180,41,0.06) 0%, transparent 60%);
+  }
+ 
+  .hero-grid {
+    position: absolute; inset: 0; z-index: 0; opacity: 0.03;
+    background-image: linear-gradient(var(--green-dark) 1px, transparent 1px),
+      linear-gradient(90deg, var(--green-dark) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+ 
+  .hero-content {
+    position: relative; z-index: 1;
+    max-width: 620px;
+  }
+ 
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--gold-light); color: #92400e;
+    padding: 0.4rem 1rem; border-radius: 50px;
+    font-size: 0.8rem; font-weight: 500;
+    margin-bottom: 1.5rem;
+    border: 1px solid #f0b42940;
+  }
+ 
+  .hero-badge::before {
+    content: ''; width: 6px; height: 6px;
+    background: var(--gold); border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+ 
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
+ 
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.8rem, 5vw, 4rem);
+    font-weight: 800; line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 1.2rem;
+  }
+ 
+  h1 .accent { color: var(--green-light); }
+  h1 .underline {
+    position: relative; display: inline-block;
+  }
+  h1 .underline::after {
+    content: '';
+    position: absolute; bottom: 4px; left: 0; right: 0; height: 4px;
+    background: var(--gold); border-radius: 2px; opacity: 0.6;
+  }
+ 
+  .hero-sub {
+    font-size: 1.1rem; color: var(--text-muted);
+    line-height: 1.7; margin-bottom: 2.5rem;
+    max-width: 480px;
+  }
+ 
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+ 
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: var(--green-dark); color: white;
+    padding: 0.9rem 2rem; border-radius: 50px;
+    text-decoration: none; font-weight: 600; font-size: 1rem;
+    transition: all 0.2s; box-shadow: 0 4px 20px rgba(13,92,58,0.25);
+  }
+ 
+  .btn-primary:hover {
+    background: var(--green-mid);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(13,92,58,0.3);
+  }
+ 
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: white; color: var(--green-dark);
+    padding: 0.9rem 2rem; border-radius: 50px;
+    text-decoration: none; font-weight: 600; font-size: 1rem;
+    border: 2px solid var(--border);
+    transition: all 0.2s;
+  }
+ 
+  .btn-secondary:hover {
+    border-color: var(--green-light);
+    transform: translateY(-2px);
+  }
+ 
+  /* WHATSAPP MOCKUP */
+  .hero-visual {
+    position: absolute; right: 4rem; top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+ 
+  .phone-frame {
+    width: 300px;
+    background: #111;
+    border-radius: 40px;
+    padding: 12px;
+    box-shadow:
+      0 40px 80px rgba(0,0,0,0.2),
+      0 0 0 1px rgba(255,255,255,0.1);
+    animation: float 4s ease-in-out infinite;
+  }
+ 
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+ 
+  .phone-screen {
+    background: #e5ddd5;
+    border-radius: 30px;
+    overflow: hidden;
+    min-height: 560px;
+  }
+ 
+  .wp-header {
+    background: #075e54;
+    padding: 1rem 1.2rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+ 
+  .wp-avatar {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: var(--green-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; font-weight: 700; color: white;
+    font-family: 'Syne', sans-serif;
+  }
+ 
+  .wp-name { color: white; font-weight: 600; font-size: 0.9rem; }
+  .wp-status { color: rgba(255,255,255,0.7); font-size: 0.75rem; }
+ 
+  .wp-messages {
+    padding: 1rem;
+    display: flex; flex-direction: column; gap: 0.6rem;
+  }
+ 
+  .msg {
+    max-width: 85%; padding: 0.6rem 0.8rem;
+    border-radius: 8px; font-size: 0.78rem;
+    line-height: 1.5; position: relative;
+    animation: slideIn 0.3s ease;
+  }
+ 
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+ 
+  .msg-bot {
+    background: white; align-self: flex-start;
+    border-radius: 0 8px 8px 8px;
+    color: #1a1a1a;
+  }
+ 
+  .msg-user {
+    background: #dcf8c6; align-self: flex-end;
+    border-radius: 8px 0 8px 8px;
+    color: #1a1a1a;
+  }
+ 
+  .msg-time {
+    font-size: 0.65rem; color: #999;
+    text-align: right; margin-top: 2px;
+  }
+ 
+  .msg-result {
+    background: white; align-self: flex-start;
+    border-radius: 0 8px 8px 8px;
+    border-left: 3px solid var(--green-light);
+    font-size: 0.72rem;
+  }
+ 
+  /* STATS */
+  .stats {
+    background: var(--green-dark);
+    padding: 3rem 4rem;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+ 
+  .stat {
+    text-align: center; color: white;
+  }
+ 
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.5rem; font-weight: 800;
+    color: var(--gold);
+    display: block;
+  }
+ 
+  .stat-label {
+    font-size: 0.85rem; opacity: 0.8;
+    margin-top: 0.3rem;
+  }
+ 
+  /* HOW IT WORKS */
+  .section {
+    padding: 6rem 4rem;
+  }
+ 
+  .section-label {
+    font-size: 0.8rem; font-weight: 600;
+    color: var(--green-light); letter-spacing: 2px;
+    text-transform: uppercase; margin-bottom: 0.8rem;
+  }
+ 
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 800; line-height: 1.2;
+    letter-spacing: -0.5px;
+    margin-bottom: 1rem;
+  }
+ 
+  .section-sub {
+    color: var(--text-muted); font-size: 1rem;
+    max-width: 500px; line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+ 
+  .steps {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+ 
+  .step {
+    background: white; border: 1px solid var(--border);
+    border-radius: 20px; padding: 2rem;
+    position: relative; overflow: hidden;
+    transition: all 0.3s;
+  }
+ 
+  .step:hover {
+    border-color: var(--green-light);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(13,92,58,0.1);
+  }
+ 
+  .step-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 4rem; font-weight: 800;
+    color: var(--green-pale);
+    position: absolute; top: 1rem; right: 1.5rem;
+    line-height: 1;
+  }
+ 
+  .step-icon {
+    width: 48px; height: 48px; border-radius: 12px;
+    background: var(--green-pale);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; margin-bottom: 1.2rem;
+  }
+ 
+  .step h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem; font-weight: 700;
+    margin-bottom: 0.6rem;
+  }
+ 
+  .step p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+ 
+  /* SCHEMES */
+  .schemes-section { background: var(--green-pale); }
+ 
+  .schemes-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+  }
+ 
+  .scheme-card {
+    background: white; border-radius: 16px;
+    padding: 1.5rem; border: 1px solid var(--border);
+    transition: all 0.2s;
+  }
+ 
+  .scheme-card:hover {
+    border-color: var(--green-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(13,92,58,0.08);
+  }
+ 
+  .scheme-tag {
+    display: inline-block;
+    font-size: 0.72rem; font-weight: 600;
+    padding: 0.25rem 0.7rem; border-radius: 50px;
+    margin-bottom: 0.8rem;
+  }
+ 
+  .tag-health { background: #fee2e2; color: #991b1b; }
+  .tag-housing { background: #dbeafe; color: #1e40af; }
+  .tag-finance { background: #fef3c7; color: #92400e; }
+  .tag-employment { background: #d1fae5; color: #065f46; }
+  .tag-insurance { background: #ede9fe; color: #5b21b6; }
+ 
+  .scheme-card h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem; font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+ 
+  .scheme-card p {
+    font-size: 0.82rem; color: var(--text-muted);
+    line-height: 1.5;
+  }
+ 
+  /* DIFFERENTIATORS */
+  .diff-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 3rem; align-items: center;
+  }
+ 
+  .diff-table {
+    border: 1px solid var(--border); border-radius: 16px;
+    overflow: hidden;
+  }
+ 
+  .diff-row {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    border-bottom: 1px solid var(--border);
+  }
+ 
+  .diff-row:last-child { border-bottom: none; }
+ 
+  .diff-cell {
+    padding: 0.9rem 1rem; font-size: 0.82rem;
+    display: flex; align-items: center;
+  }
+ 
+  .diff-row.header .diff-cell {
+    font-weight: 700; font-size: 0.78rem;
+    background: var(--green-dark); color: white;
+    font-family: 'Syne', sans-serif;
+  }
+ 
+  .diff-cell.ekikrit-col {
+    background: var(--green-pale);
+    font-weight: 600; color: var(--green-dark);
+  }
+ 
+  .check { color: var(--green-light); font-size: 1rem; }
+  .cross { color: #ef4444; font-size: 1rem; }
+ 
+  /* CTA SECTION */
+  .cta-section {
+    background: var(--green-dark);
+    padding: 6rem 4rem;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+ 
+  .cta-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(37,169,107,0.2) 0%, transparent 70%);
+  }
+ 
+  .cta-section * { position: relative; z-index: 1; }
+ 
+  .cta-section h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800; color: white;
+    margin-bottom: 1rem; letter-spacing: -0.5px;
+  }
+ 
+  .cta-section p {
+    color: rgba(255,255,255,0.7);
+    font-size: 1.1rem; margin-bottom: 2.5rem;
+    max-width: 500px; margin-left: auto; margin-right: auto;
+    line-height: 1.7;
+  }
+ 
+  .cta-wp-btn {
+    display: inline-flex; align-items: center; gap: 0.8rem;
+    background: #25d366; color: white;
+    padding: 1rem 2.5rem; border-radius: 50px;
+    text-decoration: none; font-weight: 700; font-size: 1.1rem;
+    box-shadow: 0 8px 30px rgba(37,211,102,0.3);
+    transition: all 0.2s;
+  }
+ 
+  .cta-wp-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(37,211,102,0.4);
+  }
+ 
+  .wp-icon {
+    width: 28px; height: 28px;
+    background: white; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #25d366; font-size: 0.9rem; font-weight: 900;
+  }
+ 
+  /* STATUS PAGE */
+  .status-section { padding: 6rem 4rem; background: #f8faf9; }
+ 
+  .status-card {
+    background: white; border-radius: 24px;
+    border: 1px solid var(--border);
+    padding: 2rem; max-width: 700px; margin: 0 auto;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+  }
+ 
+  .status-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 1.5rem; padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+ 
+  .status-user {
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+ 
+  .user-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--green-dark);
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-weight: 700; font-size: 1rem;
+    font-family: 'Syne', sans-serif;
+  }
+ 
+  .user-name { font-weight: 600; font-size: 0.95rem; }
+  .user-meta { font-size: 0.8rem; color: var(--text-muted); }
+ 
+  .status-badge {
+    background: var(--green-pale); color: var(--green-dark);
+    padding: 0.4rem 0.9rem; border-radius: 50px;
+    font-size: 0.78rem; font-weight: 600;
+  }
+ 
+  .scheme-status-list { display: flex; flex-direction: column; gap: 0.8rem; }
+ 
+  .scheme-status-item {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 1.2rem; border-radius: 12px;
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+  }
+ 
+  .scheme-status-item:hover { border-color: var(--green-light); }
+ 
+  .scheme-info { display: flex; align-items: center; gap: 0.8rem; }
+ 
+  .scheme-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+  }
+ 
+  .dot-done { background: var(--green-light); }
+  .dot-pending { background: var(--gold); }
+  .dot-new { background: #93c5fd; }
+ 
+  .scheme-name { font-weight: 500; font-size: 0.88rem; }
+  .scheme-benefit { font-size: 0.78rem; color: var(--text-muted); }
+ 
+  .status-pill {
+    font-size: 0.72rem; font-weight: 600;
+    padding: 0.25rem 0.8rem; border-radius: 50px;
+  }
+ 
+  .pill-done { background: #d1fae5; color: #065f46; }
+  .pill-pending { background: #fef3c7; color: #92400e; }
+  .pill-new { background: #dbeafe; color: #1e40af; }
+ 
+  .action-btn {
+    background: var(--green-dark); color: white;
+    border: none; padding: 0.8rem 1.5rem;
+    border-radius: 50px; font-weight: 600; font-size: 0.85rem;
+    cursor: pointer; margin-top: 1.2rem;
+    width: 100%; transition: background 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+ 
+  .action-btn:hover { background: var(--green-mid); }
+ 
+  /* FOOTER */
+  footer {
+    background: var(--text); color: rgba(255,255,255,0.6);
+    padding: 3rem 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+ 
+  .footer-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 1.3rem;
+    color: white;
+  }
+ 
+  .footer-logo span { color: var(--green-light); }
+ 
+  footer p { font-size: 0.85rem; }
+ 
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; }
+  .footer-links a:hover { color: white; }
+ 
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { padding: 7rem 1.5rem 3rem; flex-direction: column; }
+    .hero-visual { display: none; }
+    .stats { grid-template-columns: repeat(2, 1fr); padding: 2rem 1.5rem; }
+    .section { padding: 4rem 1.5rem; }
+    .steps { grid-template-columns: 1fr; }
+    .schemes-grid { grid-template-columns: 1fr; }
+    .diff-grid { grid-template-columns: 1fr; }
+    .diff-row { grid-template-columns: 1.5fr 1fr 1fr; }
+    .diff-row .diff-cell:nth-child(3) { display: none; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+    .cta-section { padding: 4rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+ 
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Eki<span>krit</span></div>
+  <div class="nav-links">
+    <a href="#how">How it works</a>
+    <a href="#schemes">Schemes</a>
+    <a href="#status">My Status</a>
+    <a href="#start" class="nav-cta">Start on WhatsApp</a>
+  </div>
+</nav>
+ 
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🇮🇳 750+ Central Welfare Schemes</div>
+    <h1>
+      Apna <span class="accent">Hak</span>,<br>
+      <span class="underline">Apni Bhasha</span>
+    </h1>
+    <p class="hero-sub">
+      India ke har naagrik ka hak hai sarkari yojanaon ka labh uthana. 
+      Ekikrit aapka AI agent hai — jo aapke liye dhundhta hai, form bharta hai, 
+      aur follow-up karta hai. <strong>Sirf WhatsApp pe.</strong>
+    </p>
+    <div class="hero-actions">
+      <a href="https://wa.me/14155238886?text=join%20rate-decide" class="btn-primary" target="_blank">
+        💬 WhatsApp pe Start Karein
+      </a>
+      <a href="#how" class="btn-secondary">
+        Dekho kaise kaam karta hai →
+      </a>
+    </div>
+  </div>
+ 
+  <!-- PHONE MOCKUP -->
+  <div class="hero-visual">
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div class="wp-header">
+          <div class="wp-avatar">E</div>
+          <div>
+            <div class="wp-name">Ekikrit Agent</div>
+            <div class="wp-status">● Online</div>
+          </div>
+        </div>
+        <div class="wp-messages">
+          <div class="msg msg-user">
+            Mujhe sarkar se kya milta hai?
+            <div class="msg-time">3:05 pm ✓✓</div>
+          </div>
+          <div class="msg msg-bot">
+            Namaste! Main Ekikrit hoon 🙏<br>
+            Sawaal 1/6: Aapki umar kya hai?
+            <div class="msg-time">3:05 pm</div>
+          </div>
+          <div class="msg msg-user">
+            43
+            <div class="msg-time">3:06 pm ✓✓</div>
+          </div>
+          <div class="msg msg-bot">
+            Monthly income? (number mein)
+            <div class="msg-time">3:06 pm</div>
+          </div>
+          <div class="msg msg-user">8000<div class="msg-time">3:06 pm ✓✓</div></div>
+          <div class="msg msg-result">
+            🎉 Badhai ho Ramesh ji!<br><br>
+            Aap <strong>6 yojanaon</strong> ke liye eligible hain:<br><br>
+            1. PM Awas Yojana<br>
+            2. Ayushman Bharat<br>
+            3. e-Shram Card<br>
+            4. PM Ujjwala Yojana<br>
+            + 2 aur...
+            <div class="msg-time">3:07 pm</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <span class="stat-num">750+</span>
+    <div class="stat-label">Central Welfare Schemes</div>
+  </div>
+  <div class="stat">
+    <span class="stat-num">300M</span>
+    <div class="stat-label">Eligible Citizens</div>
+  </div>
+  <div class="stat">
+    <span class="stat-num">&lt;40%</span>
+    <div class="stat-label">Currently Claiming Benefits</div>
+  </div>
+  <div class="stat">
+    <span class="stat-num">22</span>
+    <div class="stat-label">Indian Languages Supported</div>
+  </div>
+</div>
+ 
+<!-- HOW IT WORKS -->
+<section class="section" id="how">
+  <div class="section-label">How it works</div>
+  <h2 class="section-title">Sirf 6 sawaal.<br>Poori zindagi badal sakti hai.</h2>
+  <p class="section-sub">
+    Koi app download nahi. Koi form nahi. Koi office nahi. 
+    Bas WhatsApp pe message karein — baaki Ekikrit karta hai.
+  </p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-icon">💬</div>
+      <h3>WhatsApp pe Message Karein</h3>
+      <p>Apni bhasha mein likhein — Hindi, Bhojpuri, Bengali, koi bhi. Ekikrit samjhega.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-icon">🎯</div>
+      <h3>AI Dhundhta Hai Aapke Liye</h3>
+      <p>Sirf 6 basic sawaalon ke baad, Ekikrit aapka profile match karta hai 750+ schemes ke saath.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-icon">📋</div>
+      <h3>Form Auto-Fill + Documents</h3>
+      <p>DigiLocker se documents khud pull karta hai. Forms auto-fill karta hai. Aapko kuch nahi karna.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-icon">🔔</div>
+      <h3>Follow-Up Bhi Karta Hai</h3>
+      <p>"Aapki PM Awas deadline 3 din mein hai" — bina kuch kiye, reminder aata hai.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">05</div>
+      <div class="step-icon">📍</div>
+      <h3>Nearest CSC Bhi Batata Hai</h3>
+      <p>Agar office jaana pade, Ekikrit Google Maps se nearest Common Service Centre dhundhta hai.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">06</div>
+      <div class="step-icon">✅</div>
+      <h3>Track Karein Is Page Pe</h3>
+      <p>Yahan dekhen kaun si yojana applied, kaun si pending, aur aage kya karna hai.</p>
+    </div>
+  </div>
+</section>
+ 
+<!-- SCHEMES -->
+<section class="section schemes-section" id="schemes">
+  <div class="section-label">Government Schemes</div>
+  <h2 class="section-title">Yeh aapka hak hai.</h2>
+  <p class="section-sub">In yojanaon ke liye aap eligible ho sakte hain. Ekikrit check karta hai automatically.</p>
+  <div class="schemes-grid">
+    <div class="scheme-card">
+      <span class="scheme-tag tag-health">Health</span>
+      <h4>Ayushman Bharat PMJAY</h4>
+      <p>Rs. 5 lakh tak ka free hospital treatment — aapke poore parivaar ke liye</p>
+    </div>
+    <div class="scheme-card">
+      <span class="scheme-tag tag-housing">Housing</span>
+      <h4>PM Awas Yojana</h4>
+      <p>Ghar banane ke liye Rs. 2.5 lakh ki direct madad — kisi guarantee ke bina</p>
+    </div>
+    <div class="scheme-card">
+      <span class="scheme-tag tag-employment">Employment</span>
+      <h4>e-Shram Card</h4>
+      <p>Rs. 2 lakh ka accident insurance + 12+ welfare schemes ka direct access</p>
+    </div>
+    <div class="scheme-card">
+      <span class="scheme-tag tag-finance">Finance</span>
+      <h4>PM Ujjwala Yojana</h4>
+      <p>Free LPG connection + pehli refill bhi free — mahilaon ke liye</p>
+    </div>
+    <div class="scheme-card">
+      <span class="scheme-tag tag-insurance">Insurance</span>
+      <h4>PM Suraksha Bima</h4>
+      <p>Rs. 2 lakh ka accident cover — sirf Rs. 20 saal mein. Bank account hona chahiye.</p>
+    </div>
+    <div class="scheme-card">
+      <span class="scheme-tag tag-finance">Finance</span>
+      <h4>PM Mudra Yojana</h4>
+      <p>Apna kaam shuru karne ke liye Rs. 50,000 tak ka loan — bina guarantee ke</p>
+    </div>
+  </div>
+</section>
+ 
+<!-- STATUS TRACKER -->
+<section class="section status-section" id="status">
+  <div class="section-label">Your Benefits Tracker</div>
+  <h2 class="section-title">Aapki yojana ka status</h2>
+  <p class="section-sub">WhatsApp pe message karne ke baad yahan apna status dekh sakte hain.</p>
+ 
+  <div class="status-card">
+    <div class="status-header">
+      <div class="status-user">
+        <div class="user-avatar">R</div>
+        <div>
+          <div class="user-name">Ramesh Kumar</div>
+          <div class="user-meta">Delhi · Construction Worker · OBC</div>
+        </div>
+      </div>
+      <div class="status-badge">6 Schemes Found</div>
+    </div>
+ 
+    <div class="scheme-status-list">
+      <div class="scheme-status-item">
+        <div class="scheme-info">
+          <div class="scheme-dot dot-done"></div>
+          <div>
+            <div class="scheme-name">e-Shram Card</div>
+            <div class="scheme-benefit">Rs. 2 lakh accident insurance</div>
+          </div>
+        </div>
+        <span class="status-pill pill-done">Applied ✓</span>
+      </div>
+      <div class="scheme-status-item">
+        <div class="scheme-info">
+          <div class="scheme-dot dot-pending"></div>
+          <div>
+            <div class="scheme-name">PM Awas Yojana</div>
+            <div class="scheme-benefit">Rs. 2.5 lakh housing benefit</div>
+          </div>
+        </div>
+        <span class="status-pill pill-pending">Deadline: 3 days</span>
+      </div>
+      <div class="scheme-status-item">
+        <div class="scheme-info">
+          <div class="scheme-dot dot-pending"></div>
+          <div>
+            <div class="scheme-name">Ayushman Bharat PMJAY</div>
+            <div class="scheme-benefit">Rs. 5 lakh health cover</div>
+          </div>
+        </div>
+        <span class="status-pill pill-pending">Pending</span>
+      </div>
+      <div class="scheme-status-item">
+        <div class="scheme-info">
+          <div class="scheme-dot dot-new"></div>
+          <div>
+            <div class="scheme-name">PM Ujjwala Yojana</div>
+            <div class="scheme-benefit">Free LPG connection</div>
+          </div>
+        </div>
+        <span class="status-pill pill-new">New Match</span>
+      </div>
+    </div>
+ 
+    <button class="action-btn">💬 Continue on WhatsApp →</button>
+  </div>
+</section>
+ 
+<!-- DIFFERENTIATION -->
+<section class="section">
+  <div class="section-label">Why Ekikrit</div>
+  <h2 class="section-title">Baaki sab sirf batate hain.<br>Hum karte hain.</h2>
+  <p class="section-sub">UMANG, MyScheme, ChatGPT — sabka problem ek hi hai: burden user pe hota hai. Ekikrit mein nahi.</p>
+ 
+  <div class="diff-table">
+    <div class="diff-row header">
+      <div class="diff-cell">Feature</div>
+      <div class="diff-cell">UMANG / MyScheme</div>
+      <div class="diff-cell">ChatGPT</div>
+      <div class="diff-cell ekikrit-col">Ekikrit ✦</div>
+    </div>
+    <div class="diff-row">
+      <div class="diff-cell">No search needed</div>
+      <div class="diff-cell"><span class="cross">✗</span></div>
+      <div class="diff-cell"><span class="cross">✗</span></div>
+      <div class="diff-cell ekikrit-col"><span class="check">✓</span></div>
+    </div>
+    <div class="diff-row">
+      <div class="diff-cell">Auto form filling</div>
+      <div class="diff-cell"><span class="cross">✗</span></div>
+      <div class="diff-cell"><span class="cross">✗</span></div>
+      <div class="diff-cell ekikrit-col"><span class="check">✓</span></div>
+    </div>
+    <div class="diff-row">
+      <div class="diff-cell">Deadline follow-up</div>
+      <div class="diff-cell"><span class="cross">✗</span></div>
+      <div class="diff-cell"><span class="cross">✗</span></div>
+      <div class="diff-cell ekikrit-col"><span class="check">✓</span></div>
+    </div>
+    <div class="diff-row">
+      <div class="diff-cell">Works on WhatsApp</div>
+      <div class="diff-cell"><span class="cross">✗</span></div>
+      <div class="diff-cell"><span class="cross">✗</span></div>
+      <div class="diff-cell ekikrit-col"><span class="check">✓</span></div>
+    </div>
+    <div class="diff-row">
+      <div class="diff-cell">22 Indian languages</div>
+      <div class="diff-cell"><span class="cross">✗</span></div>
+      <div class="diff-cell">Partial</div>
+      <div class="diff-cell ekikrit-col"><span class="check">✓</span></div>
+    </div>
+    <div class="diff-row">
+      <div class="diff-cell">Remembers you</div>
+      <div class="diff-cell"><span class="cross">✗</span></div>
+      <div class="diff-cell"><span class="cross">✗</span></div>
+      <div class="diff-cell ekikrit-col"><span class="check">✓</span></div>
+    </div>
+  </div>
+</section>
+ 
+<!-- CTA -->
+<section class="cta-section" id="start">
+  <h2>Apna hak lo aaj.</h2>
+  <p>Sirf ek WhatsApp message se shuru hota hai. Koi app nahi, koi login nahi, koi fee nahi.</p>
+  <a href="https://wa.me/14155238886?text=join%20rate-decide" class="cta-wp-btn" target="_blank">
+    <div class="wp-icon">W</div>
+    WhatsApp pe Start Karein — Free
+  </a>
+</section>
+ 
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Eki<span>krit</span></div>
+  <p>Built with ❤️ by Team Core_Trinity · HackArena 2.0 Delhi Zonals</p>
+  <div class="footer-links">
+    <a href="#how">How it works</a>
+    <a href="#schemes">Schemes</a>
+    <a href="#status">Status</a>
+  </div>
+</footer>
+ 
+<script>
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+ 
+  // Animate stats on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+ 
+  document.querySelectorAll('.step, .scheme-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
