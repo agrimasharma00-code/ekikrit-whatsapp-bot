@@ -24,8 +24,8 @@ Before deploying, add your Twilio credentials:
 
 | Key | Value |
 |-----|-------|
-| `TWILIO_SID` | `ACe3b5004516d9fb903959e2106f0d7a0f` |
-| `TWILIO_TOKEN` | `b88507f9d28093e2a0864022e07a552d` |
+| `TWILIO_SID` | Your account SID from Twilio Console |
+| `TWILIO_TOKEN` | Your auth token from Twilio Console |
 | `TWILIO_WHATSAPP` | `whatsapp:+14155238886` |
 | `YOUR_NGROK_URL` | (will be your Vercel URL) |
 
