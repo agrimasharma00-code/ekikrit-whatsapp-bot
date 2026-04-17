@@ -66,55 +66,6 @@ A **WhatsApp chatbot** that helps Indian citizens discover and apply for governm
 
 ---
 
-## 🚀 Quick Start (Local Development)
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/amritpaxt/Ekikrit.git
-cd Ekikrit
-```
-
-### 2. Create Virtual Environment
-```bash
-python -m venv venv
-# Windows
-venv\Scripts\activate
-# macOS/Linux
-source venv/bin/activate
-```
-
-### 3. Install Dependencies
-```bash
-pip install fastapi uvicorn twilio deep-translator gtts pydub pydantic
-```
-
-### 4. Set Up Twilio Credentials
-
-Create a `.env` file in the project root:
-```env
-TWILIO_SID=your_account_sid
-TWILIO_TOKEN=your_auth_token
-TWILIO_WHATSAPP=whatsapp:+14155238886
-YOUR_NGROK_URL=https://your-ngrok-url.ngrok-free.dev
-```
-
-### 5. Run the Server
-```bash
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
-```
-
-### 6. Expose via ngrok (in another terminal)
-```bash
-ngrok http 8000
-```
-
-### 7. Configure Twilio Webhook
-- Go to Twilio Console → WhatsApp Sandbox
-- Set Webhook URL to: `https://your-ngrok-url/webhook`
-- Message the Twilio WhatsApp number to start
-
----
-
 ## 📁 Project Structure
 
 ```
@@ -196,40 +147,6 @@ Edit `schemes.json` and add entries like:
 
 ---
 
-## 🚢 Deployment Options
-
-### **Option 1: Heroku** (Recommended for beginners)
-```bash
-# Install Heroku CLI
-# Login & create app
-heroku create your-app-name
-git push heroku main
-
-# Set environment variables
-heroku config:set TWILIO_SID=xxx
-heroku config:set TWILIO_TOKEN=xxx
-```
-
-### **Option 2: Railway.app** (Easy & Free)
-1. Push code to GitHub
-2. Connect repo to Railway
-3. Set environment variables
-4. Deploy!
-
-### **Option 3: Replit**
-1. Create new Replit project from GitHub
-2. Add secrets for Twilio credentials
-3. Run with built-in webserver
-
-### **Option 4: AWS Lambda + API Gateway**
-```bash
-# Package & deploy
-pip install zappa
-zappa deploy production
-```
-
----
-
 ## 🔒 Security & Best Practices
 
 - ✅ **Never commit credentials** - Use `.env` file (added to `.gitignore`)
@@ -282,11 +199,6 @@ Contributions welcome! Please:
 4. Push to branch (`git push origin feature/awesome-feature`)
 5. Open a Pull Request
 
----
-
-## 📄 License
-
-This project is open source and available under the MIT License.
 
 ---
 
@@ -297,12 +209,6 @@ This project is open source and available under the MIT License.
 - **deep-translator** - Multi-language support
 - **Google TTS** - Voice generation
 - Built with ❤️ for India
-
----
-
-## 👨‍💻 Author
-
-**Amrit** - [GitHub](https://github.com/amritpaxt)
 
 ---
 
@@ -325,13 +231,3 @@ This project is open source and available under the MIT License.
 - [ ] Mobile app version
 - [ ] Multi-country support
 
----
-
-## 📧 Contact & Support
-
-- **Issues?** Open a GitHub issue
-- **Questions?** Email: amrit@example.com
-
----
-
-**Made with 🇮🇳 for India**
